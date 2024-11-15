@@ -11,6 +11,7 @@ import math.Vector4;
 import geometry.IntersectableObject;
 //import geometry.Triangle;
 import geometry.Sphere;
+import geometry.Triangle;
 import geometry.Plane;
 import geometry.Ray;
 import geometry.Solution;
@@ -58,7 +59,10 @@ public class Scene {
              * }
              */
             // read the number of colors and then the colors
-            int n = in.nextInt();
+ 
+
+
+           int n = in.nextInt();
             for (int i = 0; i < n; i++) {
                 double r = in.nextDouble();
                 double g = in.nextDouble();
@@ -85,6 +89,40 @@ public class Scene {
                 int colorIndex = in.nextInt();
                 Scene.lights.add(new Light(new Vector4(x, y, z), colorIndex));
             }
+
+             
+            n = in.nextInt();
+            for (int i = 0; i < n; i++) {
+                // Leer las coordenadas de los vértices
+                double x1 = in.nextDouble();
+                double y1 = in.nextDouble();
+                double z1 = in.nextDouble();
+            
+                double x2 = in.nextDouble();
+                double y2 = in.nextDouble();
+                double z2 = in.nextDouble();
+            
+                double x3 = in.nextDouble();
+                double y3 = in.nextDouble();
+                double z3 = in.nextDouble();
+            
+                // Crear los vértices del triángulo
+                Vector4 v0 = new Vector4(x1, y1, z1);
+                Vector4 v1 = new Vector4(x2, y2, z2);
+                Vector4 v2 = new Vector4(x3, y3, z3);
+            
+             
+                // Leer el índice de color y material
+                int colorIndex = in.nextInt();
+                int materialIndex = in.nextInt();
+            
+            
+                // Crear el triángulo y añadirlo a la lista de objetos
+                Triangle triangle = new Triangle(v0, v1, v2, colorIndex, materialIndex);
+            
+            
+                Scene.io.add(triangle);
+            }   
 
             // read the number of triangles, vertices indices, color indices and
             // materia indices
@@ -135,6 +173,7 @@ public class Scene {
                 Plane plane = new Plane(p1, p2, p3, colorIndex, materialIndex);
                 Scene.io.add(plane);
             }
+            
             // read the center of the Scene
             Scene.centerX = in.nextInt();
             Scene.centerY = in.nextInt();
