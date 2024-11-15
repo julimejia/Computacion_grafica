@@ -1,18 +1,3 @@
-## Getting Started
+# Punto #3 Parcial Practico
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Hemos abordado la implementación y manejo de triángulos en el raytracer, asegurando que la intersección con rayos sea precisa. Esto incluye calcular correctamente las normales del triángulo, transformar sus vértices al espacio de la cámara, y aplicar pruebas de dentro-fuera para verificar si un punto de intersección está contenido dentro del triángulo. Estas mejoras garantizan que el raytracer pueda manejar triángulos de forma eficiente y confiable.
