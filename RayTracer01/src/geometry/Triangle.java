@@ -23,6 +23,8 @@ public class Triangle implements IntersectableObject {
         this.materialIndex = materialIndex;
     }
 
+    
+
     public Solution intersect(Ray ray) {
         // Algoritmo de Moller-Trumbore para la intersección rayo-triángulo
         Vector4 edge1 = Vector4.subtract(transformedV1, transformedV0);
